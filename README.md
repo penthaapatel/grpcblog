@@ -2,9 +2,7 @@
 
 Implementation of a simple RPC service using Golang. The RPC service can create and save blog posts.
  - Client sends a request to the server to create a blog post with a given title and content.
- - The server saves the blog posts created to a temporary in-memory storage.
-
-[Here is the link to my article which explains the implementation of the code]()
+ - The server saves the blog posts created to an in-memory storage.
 
 Directory structure
 ```bash
@@ -23,6 +21,8 @@ grpcblog
 ├── storage
     └── storage.go
 ```
+## Generating protocol buffer code
+
 To clean up the generated proto files run:
 ```bash
 make clean
@@ -36,13 +36,21 @@ This generates two files:
 blog/blog_grpc.pb.go
 blog/blog.pb.go
 ```
-***blog_grpc.pb.go*** contains interfaces with no implementation. 
-***blog.pb.go*** contains protocol buffer code - responsible for binary serialization of data when it is transported between server and client.
+***blog_grpc.pb.go*** contains server and client stubs.
 
+***blog.pb.go*** contains protocol buffer related code - responsible for binary serialization of data when it is transported between server and client.
 
+## Running the server and client
 
-Run ***server*** and ***client*** code in two separate terminal windows:
+Run the server and client code in two separate terminal windows:
+
+```bash
+go run server/server.go
+```
 
 ![Server](server.png)
 
+```bash
+go run client/client.go
+```
 ![Client](client.png)
