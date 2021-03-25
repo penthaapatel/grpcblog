@@ -1,5 +1,7 @@
 # grpcblog
 
+[Here's is the link to my Medium article which explains the implementation of the code](https://penthaa.medium.com/how-to-implement-a-simple-grpc-service-using-golang-b9c58cab0929)
+
 Implementation of a simple RPC service using Golang. The RPC service can create and save blog posts.
  - Client sends a request to the server to create a blog post with a given title and content.
  - The server saves the blog posts created to an in-memory storage.
