@@ -5,6 +5,7 @@
 Implementation of a simple RPC service using Golang. The RPC service can create and save blog posts.
  - Client sends a request to the server to create a blog post with a given title and content.
  - The server saves the blog posts created to an in-memory storage.
+ - The blog posts created are also saved to a JSON file named `blogs.json` in the root directory.
 
 Directory structure
 ```bash
@@ -59,4 +60,3 @@ go run client/client.go
 ```
 ![Client](client.png)
 
-The blog posts created are saved to a JSON file : `blogs.json`
