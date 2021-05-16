@@ -10,37 +10,39 @@ Directory structure
 ```bash
 grpcblog
 ├── Makefile
+├── README.md
 ├── blog
-│   ├── blog.pb.go
-│   ├── blog.proto
-│   └── blog_grpc.pb.go
+│   ├── blog.pb.go
+│   ├── blog.proto
+│   └── blog_grpc.pb.go
+├── blogs.json
 ├── client
-│   └── client.go
+│   └── client.go
+├── client.png
 ├── go.mod
 ├── go.sum
+├── serializer
+│   └── json.go
 ├── server
-│   └── server.go
-├── storage
+│   └── server.go
+├── server.png
+└── storage
     └── storage.go
 ```
 ## Generating protocol buffer code
 
-To clean up the generated proto files run:
-```bash
-make clean
-```
-To compile the proto file run:
-```bash
-make gen
-```
+`make clean` : To clean up the generated proto files run:
+
+`make gen` : To compile the proto file run:
+
 This generates two files:
 ```bash
 blog/blog_grpc.pb.go
 blog/blog.pb.go
 ```
-***blog_grpc.pb.go*** contains server and client stubs.
+`blog_grpc.pb.go` : contains server and client stubs.
 
-***blog.pb.go*** contains protocol buffer related code - responsible for binary serialization of data when it is transported between server and client.
+`blog.pb.go` : contains protocol buffer related code - responsible for binary serialization of data when it is transported between server and client.
 
 ## Running the server and client
 
@@ -56,3 +58,5 @@ go run server/server.go
 go run client/client.go
 ```
 ![Client](client.png)
+
+The blog posts created are saved to a JSON file : `blogs.json`
