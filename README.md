@@ -31,9 +31,9 @@ grpcblog
 ```
 ## Generating protocol buffer code
 
-`make clean` : To clean up the generated proto files run:
+`make clean` : To clean up the generated proto files
 
-`make gen` : To compile the proto file run:
+`make gen` : To compile the proto file
 
 This generates two files:
 ```bash
